@@ -1,0 +1,7 @@
+{
+  "name": "HealthVault1",
+  "description": "A smart medical record wallet that uses AI to extract, organize, and visualize health data from your medical reports and prescriptions.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

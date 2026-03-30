@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HealthVault - AI Medical Wallet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            },
+            colors: {
+              glass: {
+                100: 'rgba(255, 255, 255, 0.1)',
+                200: 'rgba(255, 255, 255, 0.2)',
+                300: 'rgba(255, 255, 255, 0.3)',
+              },
+              primary: {
+                50: '#eff6ff',
+                100: '#dbeafe',
+                200: '#bfdbfe',
+                300: '#93c5fd',
+                400: '#60a5fa',
+                500: '#3b82f6',
+                600: '#2563eb',
+                700: '#1d4ed8',
+                800: '#1e40af',
+                900: '#1e3a8a',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #0F172A;
+        background-image: radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                          radial-gradient(circle at 100% 100%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+        background-attachment: fixed;
+        color: #f8fafc;
+        min-height: 100vh;
+      }
+      ::selection {
+        background-color: #3B82F6;
+        color: #ffffff;
+      }
+      /* Custom scrollbar for webkit */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: rgba(15, 23, 42, 0.5);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(59, 130, 246, 0.2);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(59, 130, 246, 0.4);
+      }
+      
+      .glass-card {
+        background: rgba(30, 41, 59, 0.5);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      
+      .glass-button {
+        background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+        color: white;
+        border: none;
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+      }
+
+      .animate-fade-in {
+        animation: fadeIn 0.4s ease-out forwards;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Markdown Content Styles */
+      .markdown-content {
+        line-height: 1.6;
+      }
+      .markdown-content p {
+        margin-bottom: 1rem;
+      }
+      .markdown-content ul, .markdown-content ol {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+      }
+      .markdown-content ul {
+        list-style-type: disc;
+      }
+      .markdown-content ol {
+        list-style-type: decimal;
+      }
+      .markdown-content li {
+        margin-bottom: 0.5rem;
+      }
+      .markdown-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 1rem;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .markdown-content th, .markdown-content td {
+        padding: 0.75rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: left;
+      }
+      .markdown-content th {
+        background: rgba(59, 130, 246, 0.2);
+        font-weight: 600;
+        color: #93c5fd;
+      }
+      .markdown-content h1, .markdown-content h2, .markdown-content h3 {
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        color: #fff;
+      }
+      .markdown-content h1 { font-size: 1.5rem; }
+      .markdown-content h2 { font-size: 1.25rem; }
+      .markdown-content h3 { font-size: 1.125rem; }
+      .markdown-content strong {
+        color: #93c5fd;
+        font-weight: 700;
+      }
+      .markdown-content blockquote {
+        border-left: 4px solid #3b82f6;
+        padding-left: 1rem;
+        margin-left: 0;
+        margin-right: 0;
+        font-style: italic;
+        color: #cbd5e1;
+      }
+      .markdown-content code {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 0.9em;
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^18.2.0",
+    "react-dom/": "https://esm.sh/react-dom@^18.2.0/",
+    "react/": "https://esm.sh/react@^18.2.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^0.21.0",
+    "recharts": "https://esm.sh/recharts@^2.12.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.363.0",
+    "qrcode": "https://esm.sh/qrcode@^1.5.3",
+    "firebase/": "https://esm.sh/firebase@^10.12.2/",
+    "dotenv/": "https://esm.sh/dotenv@^16.4.5/",
+    "express": "https://esm.sh/express@^4.19.2",
+    "mongoose": "https://esm.sh/mongoose@^8.2.3",
+    "cors": "https://esm.sh/cors@^2.8.5",
+    "multer": "https://esm.sh/multer@^1.4.5-lts.1",
+    "path": "https://esm.sh/path@^0.12.7",
+    "fs": "https://esm.sh/fs@^0.0.1-security",
+    "crypto": "https://esm.sh/crypto@^1.0.1",
+    "url": "https://esm.sh/url@^0.11.4",
+    "vite": "https://esm.sh/vite@^5.4.21",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^4.2.1",
+    "motion": "https://esm.sh/motion@^12.0.0",
+    "motion/react": "https://esm.sh/motion@^12.0.0/react",
+    "react-markdown": "https://esm.sh/react-markdown@^9.0.1",
+    "remark-gfm": "https://esm.sh/remark-gfm@^4.0.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
