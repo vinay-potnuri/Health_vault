@@ -15,11 +15,14 @@ Share data securely with doctors
 Healthcare systems today face:
 
 ❌ Scattered medical records
-❌ Difficult-to-understand prescriptions
-❌ Lack of centralized health tracking
-❌ Minimal patient engagement
-💡 Solution
 
+❌ Difficult-to-understand prescriptions
+
+❌ Lack of centralized health tracking
+
+❌ Minimal patient engagement
+
+💡 Solution
 HealthVault solves this by offering:
 
 📄 AI-driven document parsing
