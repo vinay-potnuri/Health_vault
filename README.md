@@ -1,95 +1,71 @@
 🏥 HealthVault
 🚀 AI-Powered Personal Health Ecosystem
-
-
-
-
-
-
-
-
-
-
-
-
 🌟 Overview
 
-HealthVault is an intelligent Medical AI Wallet that converts messy medical data into structured insights, actionable intelligence, and visual health tracking.
+HealthVault is a next-generation AI-powered Medical Wallet that transforms unstructured medical data into structured insights, intelligent analytics, and actionable health decisions.
 
-💡 From passive record storage → to active health intelligence
+It enables users to:
 
-🖼️ Product Preview (UI Screenshots)
-4
+Digitize medical records
+Understand complex reports
+Track their health journey
+Share data securely with doctors
 🎯 Problem Statement
 
-Healthcare today suffers from:
+Healthcare systems today face:
 
-❌ Unstructured medical records
-❌ Poor patient understanding
-❌ Lack of centralized history
-❌ No real-time insights
+❌ Scattered medical records
+❌ Difficult-to-understand prescriptions
+❌ Lack of centralized health tracking
+❌ Minimal patient engagement
 💡 Solution
 
-HealthVault provides:
+HealthVault solves this by offering:
 
-📄 AI-powered document parsing
-📊 Intelligent health analytics
+📄 AI-driven document parsing
+📊 Real-time health analytics
 💬 Personalized AI assistant
-🔐 Secure, shareable medical records
-⚡ Key Features
+🔐 Secure and shareable medical records
+✨ Key Features
 🧠 AI Document Parsing
-Extracts structured JSON from:
-Handwritten prescriptions
-Lab reports
+Converts prescriptions & lab reports into structured JSON
+Supports handwritten & printed documents
 Powered by Gemini 3 Flash
 💬 Health Assistant
-Conversational AI trained on your medical history
-Context-aware responses
+Context-aware AI chatbot
+Answers health queries based on user history
 💊 Medication Manager
-Tracks prescriptions & dosage
-⚠️ Detects:
+Tracks medicines, dosage, frequency
+Detects:
 Drug interactions
 Allergy conflicts
 📊 Wellness Dashboard
 Generates Wellness Score (0–100)
-Based on:
-Vitals
-Medication adherence
-Record completeness
+Based on vitals, adherence & records
 📈 Lab Comparison
-Interactive trend charts
-Compare multiple reports instantly
+Visualizes trends (Glucose, Hemoglobin, etc.)
+Interactive charts
 📄 Doctor Summary
-Auto-generated professional PDF reports
+Auto-generates professional PDF health reports
 🔐 Secure Sharing
-Share via:
-QR Codes
-Temporary secure links
+Share via QR codes & temporary links
 🧍 Body Map
-Visual navigation of medical conditions
-🏗️ Architecture Diagram
-4
-🧩 System Architecture
-🛠️ Tech Stack
-Layer	Technology
-🎨 Frontend	React 18, TypeScript, Tailwind CSS
-⚙️ Backend	Express.js + Vite
-🤖 AI Engine	Gemini 3 Flash
-☁️ Database	Firebase Firestore
-🔐 Auth	Firebase Authentication
-📊 Charts	Recharts
-🎬 Animations	Framer Motion
+Visual mapping of medical conditions
+🏗️ System Architecture
+<img width="1296" height="1520" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/41bbd804-b331-401c-9d86-1ddcc9490ed7" />
 🔄 User Flow
-🔐 Security & Privacy
-🔒 User data isolated via UID
-☁️ Firebase secure rules
-⚠️ AI responses include medical disclaimer
-🛡️ Enterprise-grade Google Cloud infra
-🧪 Installation & Setup
-# Clone repo
-git clone https://github.com/your-username/healthvault.git
-
-# Navigate
+<img width="1746" height="894" alt="mermaid-diagram (1)" src="https://github.com/user-attachments/assets/32c60b6c-6f72-40ca-a2e5-c5bd4369374c" />
+🧩 Tech Stack
+Layer	Technology
+Frontend	React 18, TypeScript, Tailwind CSS
+Backend	Express.js
+AI Engine	Gemini 3 Flash
+Database	Firebase Firestore
+Authentication	Firebase Auth
+Charts	Recharts
+Animations	Framer Motion
+🧪 Installation
+# Navigate into project
 cd healthvault
 
 # Install dependencies
@@ -98,28 +74,44 @@ npm install
 # Start development server
 npm run dev
 🌍 Environment Variables
+
+Create a .env file:
+
 VITE_FIREBASE_API_KEY=your_key
 VITE_FIREBASE_AUTH_DOMAIN=your_domain
 VITE_FIREBASE_PROJECT_ID=your_project
 GEMINI_API_KEY=your_api_key
+🔐 Security & Privacy
+User data scoped per authenticated UID
+Secure Firebase rules
+AI responses include medical disclaimer
+Built on Google Cloud infrastructure
 📊 Impact
-⏱️ Reduces manual record analysis time by 90%
+⏱️ Reduces manual analysis time by 90%
 🧠 Improves patient understanding
-📉 Reduces medical errors via alerts
+⚠️ Prevents medication risks
 🚀 Future Enhancements
-⌚ Wearable integration (Apple Watch, Fitbit)
-🔮 Predictive health AI
-🌐 Multi-language support
-📱 Mobile app (React Native)
+Wearable device integration
+Predictive health analytics
+Multi-language support
+Mobile app version
 ⚠️ Disclaimer
 
-HealthVault is an AI assistant, not a replacement for professional medical advice.
+HealthVault is an AI-based assistant and not a substitute for professional medical advice. Always consult a qualified healthcare provider.
 
 🤝 Contributing
-# Fork → Clone → Create Branch → Commit → PR
 
-We welcome contributions! 🚀
+Contributions are welcome!
 
+# Fork the repo
+# Create a new branch
+git checkout -b feature-name
+
+# Commit changes
+git commit -m "Add new feature"
+
+# Push
+git push origin feature-name
 📜 License
 
-MIT License © 2026
+This project is licensed under the MIT License.
